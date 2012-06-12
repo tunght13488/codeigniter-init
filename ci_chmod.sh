@@ -1,4 +1,4 @@
-chmod 0700 ./ci_chmod.sh ./ci_recess.sh
+chmod 0744 ./ci_chmod.sh ./ci_recess.sh
 find ./application -type f -exec chmod 0644 {} +
 find ./application -type d -exec chmod 0755 {} +
 find ./system -type f -exec chmod 0644 {} +
@@ -9,3 +9,4 @@ find ./asset -type f -exec chmod 0644 {} +
 find ./asset -type d -exec chmod 0755 {} +
 find . -regex '.*\.htaccess.*' -type f -exec chmod 0755 {} +
 chmod 0644 .gitignore index.php license.txt README.md crossdomain.xml humans.txt robots.txt 404.html
+chmod 0777 ./application/cache ./application/logs
