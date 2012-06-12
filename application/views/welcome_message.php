@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Welcome to CodeIgniter</title>
+	<title><?=$this->lang->line('application_title')?></title>
 
 	<style type="text/css">
 
@@ -47,7 +47,7 @@
 	#body{
 		margin: 0 15px 0 15px;
 	}
-	
+
 	p.footer{
 		text-align: right;
 		font-size: 11px;
@@ -56,7 +56,7 @@
 		padding: 0 10px 0 10px;
 		margin: 20px 0 0 0;
 	}
-	
+
 	#container{
 		margin: 10px;
 		border: 1px solid #D0D0D0;
