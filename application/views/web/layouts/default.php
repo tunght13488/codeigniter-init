@@ -4,48 +4,52 @@
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title><?=$template['title']?></title>
-  <meta name="description" content="">
-  <meta name="author" content="">
+	<title><?=$template['title']?></title>
+	<meta name="description" content="">
+	<meta name="author" content="">
 
-  <meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width">
 
-  <?=link_tag('asset/css/style.min.css')?>
+	<!-- stylesheets concatenated and minified via carabiner -->
+	<?php $this->carabiner->display('default', 'css');?>
+	<!-- /stylesheets -->
 
-  <script src="<?=base_url()?>asset/js/libs/modernizr-2.5.3-respond-1.1.0.min.js"></script>
+	<!-- modernizr -->
+	<?php $this->carabiner->display('modernizr', 'js');?>
+	<!-- /modernizr -->
 
-  <?=$template['metadata']?>
+	<?=$template['metadata']?>
+
 </head>
 <body>
-  <!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
 
-  <div class="container">
+	<div class="container">
 
-    <?=$template['body']?>
+		<?=$template['body']?>
 
-  </div> <!-- /container -->
+	</div> <!-- /container -->
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="<?=base_url()?>asset/js/libs/jquery-1.7.2.min.js"><\/script>')</script>
+<!-- load jQuery with local fallback -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="<?=base_url()?>asset/js/libs/jquery-1.7.2.min.js"><\/script>')</script>
+<!-- /jQuery -->
 
-  <!-- scripts concatenated and minified via ant build script-->
-  <script src="<?=base_url()?>asset/js/libs/bootstrap/bootstrap.min.js"></script>
+<!-- scripts concatenated and minified via carabiner -->
+<?php $this->carabiner->display('default', 'js');?>
+<!-- /scripts -->
 
-  <script src="<?=base_url()?>asset/js/plugins.js"></script>
-  <script src="<?=base_url()?>asset/js/script.js"></script>
-  <!-- end scripts-->
-
-  <!-- google analytics
-    <script>
-      var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-      g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-      s.parentNode.insertBefore(g,s)}(document,'script'));
-    </script>
-  -->
+<!-- google analytics
+	<script>
+		var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+		(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+		g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+		s.parentNode.insertBefore(g,s)}(document,'script'));
+	</script>
+-->
 
 </body>
 </html>
