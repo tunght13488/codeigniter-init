@@ -345,6 +345,7 @@ $config['groups']['default'] = array(
 	'js' => array(
 
 		array('libs/jquerypp.js'),
+		array('libs/jquery.transit.js'),
 		array('libs/bootstrap/bootstrap.min.js'),
 		array('plugins.js'),
 		array('script.js'),
